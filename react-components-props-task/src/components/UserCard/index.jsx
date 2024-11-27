@@ -2,19 +2,21 @@ import React from "react";
 import "./UserCard.css";
 
 class UserCard extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
+    state = {
       isFriend: false,
     };
-  }
 
   clickHandler = () => {
     this.setState({
       isFriend: true,
     })
+  }
 
+  hadnleSwitchFriend = () => {
+    this.setState({
+      isFriend: !this.state.isFriend
+    })
   }
 
   render() {
@@ -27,7 +29,7 @@ class UserCard extends React.Component {
         <h2>{user.name}</h2>
         <p>Id: {user.id}</p>
         <p>Gender: {user.gender}</p>
-        <button onClick={this.clickHandler}>Make Friend</button>
+        <button onClick={this.hadnleSwitchFriend}>{!this.state.isFriend ? "Make Friend" : "Delete Friend"}</button>
       </article>
     );
   }
