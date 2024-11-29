@@ -1,15 +1,12 @@
-import React from "react";
-import "./App.css";
-import UserCardsList from "./components/UserCardList";
+import React from 'react';
+import UserDashboard from './components/UserDashboard';
 
-class App extends React.Component {
-  render() {
-    return (
-      <>
-        <UserCardsList users={this.users} />
-      </>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="app">
+      <UserDashboard />
+    </div>
+  );
+};
 
 export default App;
