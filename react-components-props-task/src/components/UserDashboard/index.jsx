@@ -50,14 +50,14 @@ class UserDashboard extends Component {
     const friends = this.state.users.filter((user) => user.isFriend);
 
     return (
-      <div className="user-dashboard">
+      <>
         <h1>Панель користувачів</h1>
         <UserCardList
           users={this.state.users}
           toggleFriendStatus={this.toggleFriendStatus}
         />
         <FriendList users={friends} />
-      </div>
+      </>
     );
   }
 }

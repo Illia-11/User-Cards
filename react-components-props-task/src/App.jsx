@@ -3,9 +3,9 @@ import UserDashboard from './components/UserDashboard';
 
 const App = () => {
   return (
-    <div className="app">
+    <>
       <UserDashboard />
-    </div>
+    </>
   );
 };
 

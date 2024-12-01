@@ -4,7 +4,7 @@ import UserCard from "../UserCard";
 const UserCardList = ({ users, toggleFriendStatus }) => {
 
     return (
-      <div className="user-list">
+      <>
         {users.map((user) => (
           <UserCard
             key={user.id}
@@ -12,7 +12,7 @@ const UserCardList = ({ users, toggleFriendStatus }) => {
             toggleMyFriends={toggleFriendStatus}
           />
         ))}
-      </div>
+      </>
     );
   }
 
