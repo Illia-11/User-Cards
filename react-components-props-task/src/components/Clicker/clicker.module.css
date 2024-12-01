@@ -1,0 +1,24 @@
+.clickBtn {
+  background-color: blue;
+  color: red;
+  min-width: 10px;
+  max-height: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin: 10px;
+}
+
+.stopBtn {
+  background-color: red;
+  color: black;
+}
+
+.activePar {
+  color: green;
+  font-weight: bold;
+  font-style: italic;
+}

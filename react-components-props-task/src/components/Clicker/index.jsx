@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./clicker.module.css";
 
 class Clicker extends React.Component {
   constructor(props) {
@@ -12,14 +13,14 @@ class Clicker extends React.Component {
 
   clickForIncrement = () => {
     this.setState({
-      clickCounter: prevState.clickCounter + 1,
+      clickCounter: clickCounter + 1,
     });
   };
 
   autoClick = (interval) => {
     const autoClicker = setInterval(() => {
       this.setState({
-        clickCounter: clickCounter + 1,
+        clickCounter: clickCounter + 5,
       });
     }, interval);
 
@@ -27,8 +28,8 @@ class Clicker extends React.Component {
   };
 
   stopAutoClicker = () => {
-    if (this.state.autoClicker) {
-      clearInterval(this.state.autoClicker);
+    const { autoClicker } = this.state;
+    if (autoClicker) {
       this.setState({ autoClicker: null });
     }
   };
@@ -41,23 +42,41 @@ class Clicker extends React.Component {
     const { clickCounter, autoClicker } = this.state;
 
     return (
-      <div>
-        <button onClick={this.clickForIncrement}>Click it</button>
-        <button onClick={() => this.autoClick(1000)}>
+      <div className={styles.container}>
+        <button className={styles.clickBtn} onClick={this.clickForIncrement}>
+          Click it
+        </button>
+        <button
+          className={styles.clickBtn}
+          onClick={() => this.autoClick(1000)}
+        >
           Start Auto Click (1s)
         </button>
-        <button onClick={() => this.autoClick(2000)}>
+        <button
+          className={styles.clickBtn}
+          onClick={() => this.autoClick(2000)}
+        >
           Start Auto Click (2s)
         </button>
-        <button onClick={() => this.autoClick(5000)}>
+        <button
+          className={styles.clickBtn}
+          onClick={() => this.autoClick(5000)}
+        >
           Start Auto Click (5s)
         </button>
-        <button onClick={() => this.autoClick(10000)}>
+        <button
+          className={styles.clickBtn}
+          onClick={() => this.autoClick(10000)}
+        >
           Start Auto Click (10s)
         </button>
-        <button onClick={this.stopAutoClicker}>Stop Auto Click</button>
+        <button className={styles.stopBtn} onClick={this.stopAutoClicker}>
+          Stop Auto Click
+        </button>
         <p>Click Count: {clickCounter}</p>
-        {autoClicker && <p style={{ color: "green" }}>Auto Click is Active!</p>}
+        {autoClicker && (
+          <p className={styles.activePar}>Auto Click is Active!</p>
+        )}
       </div>
     );
   }

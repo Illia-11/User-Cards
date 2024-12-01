@@ -33,7 +33,8 @@ class UserDashboard extends Component {
       };
 
   toggleFriendStatus = (userId) => {
-    const updatedUsers = this.state.users.map((user) => {
+    const { users } = this.state;
+    const updatedUsers = users.map((user) => {
       if (user.id === userId) {
         return { ...user, isFriend: !user.isFriend };
       } else {
