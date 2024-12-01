@@ -47,7 +47,8 @@ class UserDashboard extends Component {
   };
 
   render() {
-    const friends = this.state.users.filter((user) => user.isFriend);
+    const { users } = this.state;
+    const friends = users.filter((user) => user.isFriend);
 
     return (
       <>
