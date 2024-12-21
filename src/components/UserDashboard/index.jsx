@@ -1,36 +1,36 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import UserCardList from "../UserCardList";
 import FriendList from "../FriendList";
 
 class UserDashboard extends Component {
   state = {
-        users: [
-          {
-            id: 1,
-            name: "Kamila",
-            gender: "female",
-            isFriend: false
-          },
-          {
-            id: 2,
-            name: "Pavlo",
-            gender: "male",
-            isFriend: false
-          },
-          {
-            id: 3,
-            name: "Htos",
-            gender: "undefined",
-            isFriend: false
-          },
-          {
-            id: 4,
-            name: "Ola",
-            gender: "female",
-            isFriend: false
-          }
-        ],
-      };
+    users: [
+      {
+        id: 1,
+        name: "Kamila",
+        gender: "female",
+        isFriend: false,
+      },
+      {
+        id: 2,
+        name: "Pavlo",
+        gender: "male",
+        isFriend: false,
+      },
+      {
+        id: 3,
+        name: "Htos",
+        gender: "undefined",
+        isFriend: false,
+      },
+      {
+        id: 4,
+        name: "Ola",
+        gender: "female",
+        isFriend: false,
+      },
+    ],
+  };
 
   toggleFriendStatus = (userId) => {
     const { users } = this.state;

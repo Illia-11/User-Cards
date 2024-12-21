@@ -7,30 +7,34 @@ class Clicker extends React.Component {
 
     this.state = {
       clickCounter: 0,
-      autoClicker: null,
     };
   }
 
   clickForIncrement = () => {
-    this.setState({
-      clickCounter: clickCounter + 1,
+    this.setState((state) => {
+      return {
+        clickCounter: state.clickCounter + 1,
+      };
     });
   };
 
   autoClick = (interval) => {
-    const autoClicker = setInterval(() => {
-      this.setState({
-        clickCounter: clickCounter + 5,
-      });
-    }, interval);
+    if (!this.state.autoClicker) {
+      const autoClicker = setInterval(() => {
+        this.setState((state) => {
+          return { clickCounter: state.clickCounter + 5 };
+        });
+      }, interval);
 
-    this.setState({ autoClicker });
+      this.setState({ autoClicker });
+    }
   };
 
   stopAutoClicker = () => {
     const { autoClicker } = this.state;
     if (autoClicker) {
       this.setState({ autoClicker: null });
+      clearInterval(autoClicker);
     }
   };
 

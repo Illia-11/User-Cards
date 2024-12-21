@@ -1,4 +1,3 @@
-import React from "react";
 import "./UserCard.css";
 
 const UserCard = ({ user, toggleMyFriends }) => {
